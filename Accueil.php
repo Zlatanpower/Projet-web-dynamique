@@ -1,0 +1,221 @@
+<?php
+   include('session.php');
+?>
+<html lang="en">
+<head>
+  <title>The Workflow Media</title>
+  <link rel="icon" type="image/png" href="Icones/logo.png" width="16" height="16" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #505050;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" ><img src="Icones/logo2.png" width="125" height="50" align="middle" alt="Accueil"> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+      <form class="navbar-form navbar-left" role="search"></br>
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Rechercher...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+      <ul class="nav navbar-nav" >
+        <li class="active"><a href="#"><img src="Icones/accueil.ico" alt="Accueil"> Accueil </a></li>
+        <li><a href="#"><img src="Icones/profil.ico" alt="Mon Profil"> Mon Profil </a></li>
+        <li><a href="Reseau.html"><img src="Icones/reseau.ico" alt="Mon Réseau"> Mon Réseau </a></li>
+        <li><a href="#"><img src="Icones/notification.ico" alt="Notifications"> Notifications </a></li>
+        <li><a href="#"><img src="Icones/emploi.ico" alt="Emplois"> Emplois </a></li>
+        <li><a href="#"><img src="Icones/message.ico" alt="Messages"> Messages </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="panel panel-primary text-center">
+        <div class="panel-heading"> <a href="#" style="color: white">
+          <?php
+
+          //$req = mysqli_query($db,$sql1);
+
+          $sql1 = "SELECT prenom,nom  FROM utilisateur WHERE login = '$user_check'";
+          $result1 = mysqli_query($db,$sql1);
+ while ($data = mysqli_fetch_assoc($result1)) {
+ echo "" . $data['prenom'];
+ echo " " . $data['nom'] ;
+}
+          ?>
+         </a> </div>
+          <div class="panel-body">
+        <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+      </div>
+      </div>
+      <div class="panel panel-primary text-center">
+        <div class="panel-heading"> <a href="#" style="color: white"> Description </a> </div>
+          <div class="panel-body">
+        texte description
+      </div>
+      </div>
+      <div class="panel panel-primary text-center">
+        <div class="panel-heading" > <a href="#" style="color: white">Amis</a> </div>
+          <div class="panel-body">
+            <div class="row">
+
+        <div class="row vdivide">
+          <div class="mycontent-left">
+
+        <div class="col-sm-4 text-center">
+          <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">Ami 1
+        </div>
+      </div>
+        <div class="mycontent-left">
+        <div class="col-sm-4 text-center"><img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">Ami 2</div>
+      </div>
+        <div class="col-sm-4 text-center"><img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">Ami 3</div>
+      </div>
+    </div>
+      </div>
+      </div>
+
+
+
+    </div>
+    <div class="col-sm-7">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-primary text-center">
+            <div class="panel-heading">Partagez un message, une photo, une vidéo, un lien</div>
+
+              <div class="panel-body">
+                <div class="row">
+              <button type="button" class="btn btn-primary">
+                <img src="Icones/ecrire.ico" alt="Ecrire un message">
+                Ecrire
+              </button>
+              <button type="button" class="btn btn-primary">
+                <img src="Icones/image.ico" alt="Poster une photo">
+                Photo
+              </button>
+              <button type="button" class="btn btn-primary">
+                <img src="Icones/video.ico" alt="Poster une vidéo">
+                Vidéo
+              </button>
+              <button type="button" class="btn btn-primary">
+                <img src="Icones/link.ico" alt="Poster un lien">
+                Lien
+              </button>
+              <button type="button" class="btn btn-primary">
+                <img src="Icones/event.ico" alt="Créer un évènement">
+                Évènement
+              </button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Bo</p>
+           <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Jane</p>
+           <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Anja</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2 well">
+      <div class="thumbnail">
+        <p>Upcoming Events:</p>
+        <img src="paris.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Paris</strong></p>
+        <p>Fri. 27 November 2015</p>
+        <button class="btn btn-primary">Info</button>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <p>The Workflow Media © 2018 | Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
