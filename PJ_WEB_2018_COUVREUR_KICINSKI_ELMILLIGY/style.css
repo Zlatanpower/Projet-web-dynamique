@@ -1,0 +1,24 @@
+/* pour les paragraphes ayant comme nom de classe Intro */
+.accueil_titres
+{
+	/* couleur rgb */
+    /*color: rgb(112, 85, 86); */
+	/* taille des caractères 12 points */
+	font-size: 22pt;
+	/* police Geneva*/
+	font-family: Georgia, Arial, sans-serif;
+	/* en italique */
+	font-style: normal;
+	/* en gras */
+	font-weight: bold;
+	/* opacité */
+	opacity: 0.8;
+  /* padding */
+  padding-top: 10px;
+  padding-left: 60px;
+}
+
+.accueil_boutons
+{
+  padding-left: 90px;
+}
